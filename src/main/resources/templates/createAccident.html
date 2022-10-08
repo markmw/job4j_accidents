@@ -54,6 +54,19 @@
                             </option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="type.id" name="rIds">Статья</label>
+                        <select th:field="*{rules}"
+                                class="form-control"
+                                id="rIds" name="rIds" multiple>
+                            <option value="0"></option>
+                            <option th:each="rule: ${rules}"
+                                    th:text="${rule.name}"
+                                    th:value="${rule.id}"
+                                    th:required="true">
+                            </option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
                 </form>
             </div>
