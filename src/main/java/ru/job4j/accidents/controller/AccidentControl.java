@@ -3,12 +3,11 @@ package ru.job4j.accidents.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.service.AccidentService;
+
+import java.util.NoSuchElementException;
 
 @Controller
 @AllArgsConstructor
@@ -26,9 +25,9 @@ public class AccidentControl {
         return "redirect:/index";
     }
 
-    @GetMapping("updateAccidentForm/{id}")
-    public String updateAccident(Model model, @PathVariable("id") int id) {
-        model.addAttribute("accident", accidentService.get(id).orElseGet(Accident::new));
+    @GetMapping("updateAccidentForm")
+    public String updateAccident(Model model, @RequestParam("id") int id) {
+        model.addAttribute("accident", accidentService.get(id).orElseThrow(NoSuchElementException::new));
         return "updateAccident";
     }
 
