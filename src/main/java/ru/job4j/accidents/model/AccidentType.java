@@ -14,6 +14,7 @@ public class AccidentType {
     private int id;
     private String name;
 
-    public AccidentType(int accident_type_id) {
+    public AccidentType(int id) {
+        this.id = id;
     }
 }

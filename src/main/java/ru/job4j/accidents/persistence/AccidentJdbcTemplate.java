@@ -8,7 +8,6 @@ import ru.job4j.accidents.model.AccidentType;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 @AllArgsConstructor
@@ -61,7 +60,8 @@ public class AccidentJdbcTemplate {
             accident.setAddress(rs.getString("address"));
             accident.setType(new AccidentType(rs.getInt("accident_type_id")));
             accident.setRules(new ArrayList<>(rs.getInt("rules_id")));
-            return accident;}, id);
+            return accident;
+            }, id);
         return rsl;
     }
 }
