@@ -20,7 +20,7 @@ public class Accident {
     private String text;
     private String address;
     private AccidentType type;
-    private final Set<Rule> rules = new HashSet<>();
+    private Set<Rule> rules;
 
     public Set<Rule> getRules() {
         return Set.copyOf(rules);

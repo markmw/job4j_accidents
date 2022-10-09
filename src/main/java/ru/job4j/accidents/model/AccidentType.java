@@ -13,4 +13,7 @@ public class AccidentType {
     @EqualsAndHashCode.Include
     private int id;
     private String name;
+
+    public AccidentType(int accident_type_id) {
+    }
 }
