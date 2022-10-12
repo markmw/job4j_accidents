@@ -13,6 +13,11 @@ CREATE TABLE accidents (
   name varchar(2000),
   text text,
   address text,
-  accident_type_id int references types(id),
-  rules_id int references rules_table(id)
+  accident_type_id int references types(id)
+);
+
+CREATE TABLE accident_rule (
+  id SERIAL PRIMARY KEY,
+  rule_id INT REFERENCES rules_table(id),
+  accident_id INT REFERENCES accidents(id)
 );

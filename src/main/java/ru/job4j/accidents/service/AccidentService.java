@@ -5,6 +5,7 @@ import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.persistence.AccidentJdbcTemplate;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AccidentService {
@@ -14,7 +15,7 @@ public class AccidentService {
         this.accidentJdbcTemplate = accidentJdbcTemplate;
     }
 
-    public Accident get(int id) {
+    public Optional<Accident> get(int id) {
         return accidentJdbcTemplate.get(id);
     }
 
@@ -26,7 +27,7 @@ public class AccidentService {
         return accidentJdbcTemplate.getAll();
     }
 
-    public Accident update(Accident accident) {
-        return accidentJdbcTemplate.update(accident);
+    public void update(Accident accident) {
+        accidentJdbcTemplate.update(accident);
     }
 }
