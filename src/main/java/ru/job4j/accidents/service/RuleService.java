@@ -1,11 +1,13 @@
 package ru.job4j.accidents.service;
 
 import org.springframework.stereotype.Service;
+import ru.job4j.accidents.model.Accident;
 import ru.job4j.accidents.model.Rule;
 import ru.job4j.accidents.persistence.RuleRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service

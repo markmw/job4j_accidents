@@ -50,7 +50,6 @@ public class AccidentControl {
     private void takeAction(Accident accident, Consumer<Accident> action) {
         accident.setType(accidentTypeService.get(accident.getType().getId())
                 .orElseThrow(NoSuchElementException::new));
-        ruleService.setRules(accident);
         action.accept(accident);
     }
 }
