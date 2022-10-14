@@ -20,6 +20,9 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="#">Главная</a>
                 <a class="nav-item nav-link" th:href="@{/accidents}">Инциденты</a>
+                <div>
+                    Login as : ${user.username}
+                </div>
                 <a class="nav-link p-2 ml-auto" th:href="@{/logout}">
                     <span>Выйти</span>
                 </a>
